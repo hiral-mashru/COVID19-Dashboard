@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>States</title>
+    <style type="text/css">
+        #t0 {
+            float: left;
+            width: 35%;
+        }
+        #t1 {
+            float: left;
+            width: 15%;
+        }
+        #t2 {
+            float: left;
+            width: 20%;
+        }
+        #t3 {
+            float: left;
+            width: 15%;
+        }
+        #t4{
+            float: left;
+            width: 15%;
+        }
+
+    </style>
+    <meta charset="ISO-8859-1">
+    <title>Graph</title>
+</head>
+<body>
+<div class="bs-example">
+    <table class="table table-hover" id="t0">
+        <tr bgcolor="#5f9ea0">
+            <th>States</th>
+        </tr>
+        <div th:each="state : ${states}">
+            <tr>
+<!--                <td th:text="${state}"></td>-->
+                <td>
+                    <span th:if="${state == ''}" ><b>No Data Available</b></span>
+                    <span th:unless="${state == ''}" th:text="${state}"></span>
+                </td>
+            </tr>
+        </div>
+    </table>
+    <table class="table table-hover" id="t1">
+        <tr bgcolor="#5f9ea0">
+            <th>Deaths</th>
+        </tr>
+        <div th:each="state : ${deaths}">
+            <tr>
+                <td>
+                    <span th:if="${state == -1}" ><b>No Data Available</b></span>
+                    <span th:unless="${state == -1}" th:text="${state}"></span>
+                </td>
+            </tr>
+        </div>
+    </table>
+    <table class="table table-hover" id="t2">
+        <tr bgcolor="#5f9ea0">
+            <th>Recovery</th>
+        </tr>
+        <div th:each="state : ${recovery}">
+            <tr>
+                <td>
+                    <span th:if="${state == -1}" ><b>No Data Available</b></span>
+                    <span th:unless="${state == -1}" th:text="${state}"></span>
+                </td>
+            </tr>
+        </div>
+    </table>
+    <table class="table table-hover" id="t3">
+        <tr bgcolor="#5f9ea0">
+            <th>Confirmed</th>
+        </tr>
+        <div th:each="state : ${confirm}">
+            <tr>
+<!--                <td th:text="${state} ? '-1' : 'RETIRED'">-->
+                <td>
+                    <span th:if="${state == -1}" ><b>No Data Available</b></span>
+                    <span th:unless="${state == -1}" th:text="${state}"></span>
+                </td>
+            </tr>
+        </div>
+    </table>
+    <table class="table table-hover" id="t4">
+        <tr bgcolor="#5f9ea0">
+            <th>Changes</th>
+        </tr>
+        <div th:each="state : ${changes}">
+            <tr>
+                <td>
+                    <span th:if="${state == -1}" ><b>No Data Available</b></span>
+                    <span th:unless="${state == -1}" th:text="${state}"></span>
+                </td>
+            </tr>
+        </div>
+    </table>
+</div>
+</body>
+</html>

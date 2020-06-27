@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>States</title>
+    <style type="text/css">
+        #t0 {
+            float: left;
+            width: 49.5%;
+        }
+        #t1 {
+            float: right;
+            width: 49.5%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="bs-example">
+    <table class="table table-hover" id="t0">
+        <tr bgcolor="#5f9ea0"><td colspan="2" align="center"><b>Maximum Death-Top 10 Countries</b></td></tr>
+        <tr bgcolor="#5f9ea0">
+            <th id="d0">Country</th>
+            <th id="d1">Death</th>
+        </tr>
+        <div th:each="state : ${deathsort}">
+            <tr>
+                <td th:text="${state.getKey()}"></td>
+                <td th:text="${state.getValue()}"></td>
+            </tr>
+        </div>
+    </table>
+    <table class="table table-hover" id="t1">
+        <tr bgcolor="#5f9ea0"><td colspan="2" align="center"><b>Maximum Recovery-Top 10 Countries</b></td></tr>
+        <tr bgcolor="#5f9ea0">
+            <th>Country</th>
+            <th>Recovery</th>
+        </tr>
+        <div th:each="state : ${recoverysort}">
+            <tr>
+                <td th:text="${state.getKey()}"></td>
+                <td th:text="${state.getValue()}"></td>
+            </tr>
+        </div>
+    </table>
+
+</div>
+</body>
+</html>
