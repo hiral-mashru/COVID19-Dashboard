@@ -5,7 +5,7 @@ Discription:
   
 -> COVID19 Dashboard tracks the information of COVID19 globally.
 
-Output: https://drive.google.com/file/d/1hw_zL9Ds7z3rFkSNWV4mryD3LzBs5Jal/view?usp=sharing
+Output (Video): https://drive.google.com/file/d/1hw_zL9Ds7z3rFkSNWV4mryD3LzBs5Jal/view?usp=sharing
 
 Resources :
   Database: https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series
